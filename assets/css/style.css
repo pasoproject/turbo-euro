@@ -2,3 +2,29 @@ body {
 	margin: 0;
 	background-color: forestgreen;
 }
+
+.main_block {
+	height: 400px;
+	width: 495px;
+	border: 1px solid darkslategrey;
+	margin: 95px;
+	padding: 39px;
+}
+
+input {
+	height: 24px;
+	width: 295px;
+	margin: 10px;
+}
+
+button {
+	height: 24px;
+	width: 145px;
+	margin: 10px;
+}
+
+.label_block {
+	font-family: 'Times New Roman';
+	color: gainsboro;
+	margin-bottom: 29px;
+}
