@@ -15,16 +15,18 @@ input {
 	height: 24px;
 	width: 295px;
 	margin: 10px;
+	font-family: 'Staatliches', cursive;
 }
 
 button {
 	height: 24px;
 	width: 145px;
 	margin: 10px;
+	font-family: 'Staatliches', cursive;
 }
 
 .label_block {
-	font-family: 'Times New Roman';
 	color: gainsboro;
 	margin-bottom: 29px;
+	font-family: 'Staatliches', cursive;
 }
