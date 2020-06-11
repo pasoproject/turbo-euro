@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SoccerRes &trade;</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
+
+		body {
+			margin: 0;
+			transition-timing-function: linear;
+		}
+
+		#main_body {
+			background-color: #676767;
+			width: 100%;
+			height: 230vh;
+		}
+
+		header {
+			width: 100%;
+			background-color: #2e2b2b;
+			position: fixed;
+			height: 88px;
+			z-index: 1;
+			display: flex;
+			text-align: justify;
+		}
+
+		#left_for_logo {
+			margin-left: 30px;
+			z-index: 2;
+			height: 88px;
+			width: 88px;
+		}
+
+		#units_menu {
+			float: right;
+			z-index: 2;
+			margin-top: -60px;
+			right: 40px;
+			position: absolute;
+		}
+
+		#unit {
+			color: white;
+			font-family: 'EB Garamond', serif;
+			transition: 0.4s;
+		}
+
+		#unit:hover {
+			color: darkturquoise;
+		}
+
+		#games_folder_outer {
+			width: 100%;
+			height: 850px;
+			background: transparent;
+		}
+
+		#games_folder_inner {
+			width: 1160px;
+			background: transparent;
+			height: 740px;
+			top: 138px;
+			left: 188px;
+			position: absolute;
+			z-index: 0;
+		}
+
+		#games_panels_1, #games_panels_2, #games_panels_3, #games_panels_4, #games_panels_5, #games_panels6, #article_big, .article_linear {
+			/*display: inline-block;
+		    vertical-align: middle;*/
+			-webkit-transform: perspective(1px) translateZ(0);
+			transform: perspective(1px) translateZ(0);
+			box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-property: transform;
+			transition-property: transform;
+			border-radius: 17px;
+		}
+
+		#games_panels_1 {
+			float: left;
+			margin-right: 50px;
+			margin-bottom: 50px;
+			background-color: blue;
+			height: 320px;
+			width: 320px;
+		}
+
+		#games_panels_1:hover, #games_panels_1:focus, #games_panels_1:active {
+			-webkit-transform: scale(1.1);
+  			transform: scale(1.1);
+		}
+
+		#games_panels_2 {
+			margin-left: 50px;
+			margin-right: 50px;
+			margin-bottom: 50px;
+			background-color: blue;
+			height: 320px;
+			width: 320px;
+		}
+
+		#games_panels_2:hover, #games_panels_2:focus, #games_panels_2:active {
+			-webkit-transform: scale(1.1);
+  			transform: scale(1.1);
+		}
+
+		#games_panels_3 {
+			float: right;
+			margin-left: 50px;
+			margin-top: -370px;
+			background-color: blue;
+			height: 320px;
+			width: 320px;
+		}
+
+		#games_panels_3:hover, #games_panels_3:focus, #games_panels_3:active {
+			-webkit-transform: scale(1.1);
+  			transform: scale(1.1);
+		}
+
+		#games_panels_4 {
+			float: left;
+			margin-right: 50px;
+			margin-top: 50px;
+			background-color: blue;
+			height: 320px;
+			width: 320px;
+		}
+
+		#games_panels_4:hover, #games_panels_4:focus, #games_panels_4:active {
+			-webkit-transform: scale(1.1);
+  			transform: scale(1.1);
+		}
+
+		#games_panels_5 {
+			margin-left: 50px;
+			margin-right: 50px;
+			margin-top: 100px;
+			background-color: blue;
+			height: 320px;
+			width: 320px;
+		}
+
+		#games_panels_5:hover, #games_panels_5:focus, #games_panels_5:active {
+			-webkit-transform: scale(1.1);
+  			transform: scale(1.1);
+		}
+
+		#games_panels_6 {
+			float: right;
+			margin-left: 50px;
+			margin-top: -320px;
+			background-color: blue;
+			height: 320px;
+			width: 320px;
+			border-radius: 17px;
+		}
+
+		#games_panels_6:hover, #games_panels_6:focus, #games_panels_6:active {
+			-webkit-transform: scale(1.1);
+  			transform: scale(1.1);
+		}
+
+		.game_photo {
+			height: 50%;
+			width: 100%;
+			border-radius: 17px 17px 0 0;
+			border-collapse: separate;
+		}
+
+		.game_heading {
+			height: 11%;
+			width: 100%;
+			/*float: right;*/
+			font-family: 'EB Garamond', serif;
+			font-weight: 500;
+			font-size: 23px;
+			text-align: left;
+			background-color: white;
+		}
+
+		.game_heading_ex {
+			height: 100%;
+			width: 97%;
+			float: right;
+			background: transparent;
+		}
+
+		.game_lead{
+			height: 39%;
+			width: 100%;
+			text-align: left;
+			font-family: 'EB Garamond', serif;
+			font-weight: 400;
+			background-color: gainsboro;
+			border-radius: 0 0 17px 17px;
+		}
+
+		.game_lead_ex {
+			height: 100%;
+			width: 97%;
+			float: right;
+			border-radius: 0 0 17px 17px;
+		}
+
+		#articles_folder_selector {
+			width: 100%;
+			height: 88px;
+			z-index: 0;
+			position: absolute;
+		}
+
+		#articles_folder_outer {
+			width: 100%;
+			background: transparent;
+			height: 678px;
+		}
+
+		#articles_folder_inner {
+			width: 1160px;
+			background: transparent;
+			height: 480px;
+			top: 1081px;
+			left: 188px;
+			position: absolute;
+			z-index: 0;
+		}
+
+		#article_big {
+			width: 480px;
+			height: 480px;
+			background: blue;
+			float: left;
+			border-radius: 17px;
+		}
+
+		#article_big:hover, #article_big:focus, #article_big:active {
+			-webkit-transform: scale(1.1);
+  			transform: scale(1.1);
+		}
+
+		.ar_big_photo {
+			width: 100%;
+			height: 50%;
+			border-radius: 17px 17px 0 0;
+			border-collapse: separate;
+		}
+
+		.ar_big_heading {
+			width: 100%;
+			height: 11%;
+			font-family: 'EB Garamond', serif;
+			font-weight: 500;
+			font-size: 34px;
+			background-color: white;
+			text-align: left;
+		}
+
+		.ar_big_heading_ex {
+			height: 100%;
+			width: 97%;
+			float: right;
+			background: white;
+		}
+
+		.ar_big_otstup {
+			width: 100%;
+			height: 1%;
+			background-color: white;
+		}
+
+		.ar_big_lead {
+			width: 100%;
+			height: 37%;
+			text-align: left;
+			font-family: 'EB Garamond', serif;
+			font-weight: 400;
+			font-size: 23px;
+			background-color: gainsboro;
+			border-radius: 0 0 17px 17px;
+		}
+
+		.ar_big_lead_ex {
+			height: 100%;
+			width: 97%;
+			float: right;
+			border-radius: 0 0 17px 17px;
+			background-color: gainsboro;
+		}
+
+		.article_linear {
+			height: 130px;
+			width: 580px;
+			float: right;
+			background: blue;
+			border-radius: 17px;
+			position: relative;
+		}
+
+		.article_linear:hover, .article_linear:focus, .article_linear:active {
+			-webkit-transform: scale(1.1);
+  			transform: scale(1.1);
+		}
+
+		.ar_linear_photo {
+			height: 100%;
+			width: 260px;
+			background-color: red;
+			border-radius: 17px 0 0 17px;
+			float: left;
+		}
+
+		.ar_linear_heading {
+			width: 320px;
+			height: 25%;
+			background-color: white;
+			font-family: 'EB Garamond', serif;
+			font-weight: 500;
+			font-size: 23px;
+			float: right;
+			border-radius: 0 17px 0 0;
+		}
+
+		.ar_linear_heading_ex {
+			width: 97%;
+			height: 100%;
+			background-color: whitee;
+			float: right;
+			text-align: left;
+			border-radius: 0 17px 0 0;
+		}
+
+		.ar_linear_lead {
+			width: 320px;
+			height: 75%;
+			background-color: gainsboro;
+			font-family: 'EB Garamond', serif;
+			font-weight: 400;
+			float: right;
+			border-radius: 0 0 17px 0;
+		}
+
+		.ar_linear_lead_ex {
+			width: 97%;
+			height: 100%;
+			text-align: left;
+			background-color: gainsboro;
+			float: right;
+			border-radius: 0 0 17px 0;
+		}
+	</style>
+	<meta charset="utf-8">
+	<!--razdelitelnya cherta-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="icon" href="S (Staatliches).png">
+	<link rel="stylesheet" href="hover.css" media="all">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script> -->
+</head>
+
+<!--razdelitelnya cherta-->
+
+<body>
+	<div id="main_body">
+		<header>
+			<div id="elems_header">
+				<div id="left_for_logo">
+					<a href="#">
+						<img src="SOC CER RES (Staatliches).png" width='88px'>
+					</a>
+				</div>
+				<nav class="nav justify-content-center" id='units_menu'>
+    				<a href="#scroll_one" class="nav-item nav-link active" id="unit">Анализ игр</a>
+    				<a href="#articles_folder_selector" class="nav-item nav-link" id="unit">Тактические аспекты</a>
+    				<a href="#" class="nav-item nav-link" id="unit">Симулятор формаций</a>
+				</nav>
+				
+			</div> 
+		</header>
+		<div id="scroll_one" style="width: 100%; height: 88px; background: transparent;"></div>
+		<div id="games_folder_outer" align="center">
+			<div id="games_folder_inner">
+				<div id="games_panels_1">
+					<div class="game_photo">
+						<img src="atleti.png" width='320px' style="border-radius: 17px 17px 0 0;">
+					</div>
+					<div class="game_heading">
+						<div class="game_heading_ex">
+							Ливерпуль 2 - 3 Атлетико
+						</div>
+					</div>
+					<div class="game_lead">
+						<div class="game_lead_ex">
+							Жмнцвмнмнчмпымчомц. Впрцил пумму прпоцчор 33 лочирыил, рцр ицилцо - рои. GFhhjjj djmsavhd dhchd hjvchgsvzj hgcjsv, hhsgsbh. Atleti WOW!
+						</div>
+					</div>
+				</div>
+				<div id="games_panels_2">
+					<div class="game_photo">
+						<img src="atleti.png" width='320px' style="border-radius: 17px 17px 0 0;">
+					</div>
+					<div class="game_heading">
+						<div class="game_heading_ex">
+							Ливерпуль 2 - 3 Атлетико
+						</div>
+					</div>
+					<div class="game_lead">
+						<div class="game_lead_ex">
+							Жмнцвмнмнчмпымчомц. Впрцил пумму прпоцчор 33 лочирыил, рцр ицилцо - рои. GFhhjjj djmsavhd dhchd hjvchgsvzj hgcjsv, hhsgsbh. Atleti WOW!
+						</div>
+					</div>
+				</div>
+				<div id="games_panels_3">
+					<div class="game_photo">
+						<img src="atleti.png" width='320px' style="border-radius: 17px 17px 0 0;">
+					</div>
+					<div class="game_heading">
+						<div class="game_heading_ex">
+							Ливерпуль 2 - 3 Атлетико
+						</div>
+					</div>
+					<div class="game_lead">
+						<div class="game_lead_ex">
+							Жмнцвмнмнчмпымчомц. Впрцил пумму прпоцчор 33 лочирыил, рцр ицилцо - рои. GFhhjjj djmsavhd dhchd hjvchgsvzj hgcjsv, hhsgsbh. Atleti WOW!
+						</div>
+					</div>
+				</div>
+				<div id="games_panels_4">
+					<div class="game_photo">
+						<img src="atleti.png" width='320px' style="border-radius: 17px 17px 0 0;">
+					</div>
+					<div class="game_heading">
+						<div class="game_heading_ex">
+							Ливерпуль 2 - 3 Атлетико
+						</div>
+					</div>
+					<div class="game_lead">
+						<div class="game_lead_ex">
+							Жмнцвмнмнчмпымчомц. Впрцил пумму прпоцчор 33 лочирыил, рцр ицилцо - рои. GFhhjjj djmsavhd dhchd hjvchgsvzj hgcjsv, hhsgsbh. Atleti WOW!
+						</div>
+					</div>
+				</div>
+				<div id="games_panels_5">
+					<div class="game_photo">
+						<img src="atleti.png" width='320px' style="border-radius: 17px 17px 0 0;">
+					</div>
+					<div class="game_heading">
+						<div class="game_heading_ex">
+							Ливерпуль 2 - 3 Атлетико
+						</div>
+					</div>
+					<div class="game_lead">
+						<div class="game_lead_ex">
+							Жмнцвмнмнчмпымчомц. Впрцил пумму прпоцчор 33 лочирыил, рцр ицилцо - рои. GFhhjjj djmsavhd dhchd hjvchgsvzj hgcjsv, hhsgsbh. Atleti WOW!
+						</div>
+					</div>
+				</div>
+				<div id="games_panels_6">
+					<div class="game_photo">
+						<img src="atleti.png" width='320px' style="border-radius: 17px 17px 0 0;">
+					</div>
+					<div class="game_heading">
+						<div class="game_heading_ex">
+							Ливерпуль 2 - 3 Атлетико
+						</div>
+					</div>
+					<div class="game_lead">
+						<div class="game_lead_ex">
+							Жмнцвмнмнчмпымчомц. Впрцил пумму прпоцчор 33 лочирыил, рцр ицилцо - рои. GFhhjjj djmsavhd dhchd hjvchgsvzj hgcjsv, hhsgsbh. Atleti WOW!
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="articles_folder_selector">
+		</div>
+		<div id="articles_folder_outer" align="center">
+			<div id="articles_folder_inner">
+				<div id="article_big">
+					<div class="ar_big_photo">
+						<img src="bar-int.png" height="240px" style="border-radius: 17px 17px 0 0;">
+					</div>
+					<div class="ar_big_otstup"></div>
+					<div class="ar_big_heading">
+						<div class="ar_big_heading_ex">Схема дня : 3-3-2-2</div>
+					</div>
+					<div class="ar_big_otstup"></div>
+					<div class="ar_big_lead">
+						<div class="ar_big_lead_ex">История, применение и разбор основных тактических аспектов, связанных со схемой 3-3-2-2</div>
+					</div>
+				</div>
+				<div class="article_linear">
+					<div class="ar_linear_photo">
+						<img src="formations/4-3-2-1.png" style="height: 130px; border-radius: 17px 0 0 17px;">
+					</div>
+					<div class="ar_linear_heading">
+						<div class="ar_linear_heading_ex">Схема дня : 4-3-2-1</div>
+					</div>
+					<div class="ar_linear_lead">
+						<div class="ar_linear_lead_ex">В чём секрет знаменитой "пирамиды" "Милана" времён Карло Анчелотти?</div>
+					</div>
+				</div>
+				<div class="article_linear" style="margin-top: 45px;">
+					<div class="ar_linear_photo">
+						<img src="formations/4-3-2-1.png" style="height: 130px; border-radius: 17px 0 0 17px;">
+					</div>
+					<div class="ar_linear_heading">
+						<div class="ar_linear_heading_ex">Схема дня : 4-3-2-1</div>
+					</div>
+					<div class="ar_linear_lead">
+						<div class="ar_linear_lead_ex">В чём секрет знаменитой "пирамиды" "Милана" времён Карло Анчелотти?</div>
+					</div>
+				</div>
+				<div class="article_linear" style="margin-top: 45px;">
+					<div class="ar_linear_photo">
+						<img src="formations/4-3-2-1.png" style="height: 130px; border-radius: 17px 0 0 17px;">
+					</div>
+					<div class="ar_linear_heading">
+						<div class="ar_linear_heading_ex">Схема дня : 4-3-2-1</div>
+					</div>
+					<div class="ar_linear_lead">
+						<div class="ar_linear_lead_ex">В чём секрет знаменитой "пирамиды" "Милана" времён Карло Анчелотти?</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--razdelitelnya cherta-->
+    <script type="text/javascript">
+    	$('#units_menu a').on('click', function() {
+
+    	let href = $(this).attr('href');
+
+    	$('html, body').animate({
+        	scrollTop: $(href).offset().top
+    		}, {
+        		duration: 370,   // по умолчанию «400»
+        		easing: "linear" // по умолчанию «swing»
+    		});
+
+    		return false;
+		});
+    </script>
+</body>
+</html>
